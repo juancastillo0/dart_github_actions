@@ -6,6 +6,9 @@ on:
   push:
     branches:
       - main
+permissions:
+  contents: write
+  discussions: write
 jobs:
   build:
     name: Build and deploy Flutter web
@@ -27,7 +30,7 @@ jobs:
 
       - name: Build web
         # TODO: change base-href to your repo name
-        run: flutter build web --release --web-renderer canvaskit --base-href /neural_graph/
+        run: flutter build web --release --base-href /neural_graph/
 
       # - run: dart patch_service_worker.dart
 
